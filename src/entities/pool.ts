@@ -210,13 +210,13 @@ export class Pool {
         ? JSBI.add(TickMath.MIN_SQRT_RATIO, ONE)
         : JSBI.subtract(TickMath.MAX_SQRT_RATIO, ONE)
 
-    if (zeroForOne) {
-      invariant(JSBI.greaterThan(sqrtPriceLimitX96, TickMath.MIN_SQRT_RATIO), 'RATIO_MIN')
-      invariant(JSBI.lessThan(sqrtPriceLimitX96, this.sqrtRatioX96), 'RATIO_CURRENT')
-    } else {
-      invariant(JSBI.lessThan(sqrtPriceLimitX96, TickMath.MAX_SQRT_RATIO), 'RATIO_MAX')
-      invariant(JSBI.greaterThan(sqrtPriceLimitX96, this.sqrtRatioX96), 'RATIO_CURRENT')
-    }
+//     if (zeroForOne) {
+//       invariant(JSBI.greaterThan(sqrtPriceLimitX96, TickMath.MIN_SQRT_RATIO), 'RATIO_MIN')
+//       invariant(JSBI.lessThan(sqrtPriceLimitX96, this.sqrtRatioX96), 'RATIO_CURRENT')
+//     } else {
+//       invariant(JSBI.lessThan(sqrtPriceLimitX96, TickMath.MAX_SQRT_RATIO), 'RATIO_MAX')
+//       invariant(JSBI.greaterThan(sqrtPriceLimitX96, this.sqrtRatioX96), 'RATIO_CURRENT')
+//     }
 
     const exactInput = JSBI.greaterThanOrEqual(amountSpecified, ZERO)
 
